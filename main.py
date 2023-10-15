@@ -99,8 +99,7 @@ def get_data_with_retry(messages, max_retries=5, delay_seconds=2):
 
 def coolest_func_ever(job, companyTarget, quantity, numPages=3):
     import pandas as pd
-    content = "I am using the Apollo API to find partnerships for my role as " + job + ". The Apollo API enables me to find lots of people and their emails so I can reach out to them. However, one of their filters I can choose between is what their job titles are. please generate a list of 15 job titles that could be relevant for me to meet. I will be using your response directly as the input into the API call so I need it to be in the perfect format of an array with strings. For example, if a marketing director would be useful to me, please output:  ['marketing director', 'Director, Marketing and Communications', 'Marketing'] Make sure your output has no new lines and no slashes "
-
+    content = "I am using the API to find partnerships for my role as " + job + ".
     messages = [
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": content}
@@ -141,8 +140,6 @@ def coolest_func_ever(job, companyTarget, quantity, numPages=3):
     st.markdown("---")
     st.subheader("Companies You Are Querying")
     st.markdown(urls)
-
-    ##BEGIN APOLLO
 
     import ast
     person_title_strings = ast.literal_eval(person_title_strings)
